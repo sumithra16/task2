@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="Home_page.css">
+
+<body onload="get_Values()">
+    <div class="product_Table">
+        <h1>Product Edit Table</h1>
+    </div>
+
+    <form class="login-form">
+        <div class="container">
+
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-communication-email prefix"></i>
+
+                    <label for="Product_Name" class="center-align">Product Name</label>
+                    <input id="Product_Name" class="validate">
+                </div>
+            </div>
+            <div class="row margin">
+                <div class="input-field col s12">
+                    <i class="mdi-social-person-outline prefix"></i>
+
+                    <label for="Product_URL" class="center-align">Product URL</label>
+                    <input id="Product_URL" type="text" class="validate">
+                </div>
+            </div>
+            <button onclick="edit()">EDIT</button>
+        </div>
+    </form>
+    <script src="edit.js"></script>
+</body>
+
+</html>
