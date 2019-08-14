@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
-    <link src="/home/maindwave-dev1/Documents/task 2/public/scripts/register.js">
+    <!-- <link rel="stylesheet" type="text/css" href="/home/maindwave-dev1/Documents/JQuery/client/public/css/style.css"> -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <title>Signup / Registration form using Material Design - Demo by W3lessons</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style type="text/css">
         html,
         body {
@@ -25,6 +26,10 @@
             vertical-align: middle;
         }
 
+        .msg {
+            color: red;
+        }
+
         .margin {
             margin: 0 !important;
         }
@@ -35,7 +40,7 @@
     <div id="login-page" class="row">
         <div class="col s12 z-depth-6 card-panel">
 
-            <form name="form1" class="login-form">
+            <form name="form1" class="login-form form">
                 <div class="row">
                     <div class="input-field col s12 center">
                         <img src="http://w3lessons.info/logo.png" alt=""
@@ -50,14 +55,14 @@
                 <div class="row margin">
                     <div class="input-field col s12">
                         <i class="mdi-social-person-outline prefix"></i>
-                        <input id="username" placeholder="Enter Username" type="text">
+                        <input id="username" placeholder="Enter Username" name='text' type="text">
                         <label class="center-align"></label>
                     </div>
                 </div>
                 <div class="row margin">
                     <div class="input-field col s12">
                         <i class="mdi-communication-email prefix"></i>
-                        <input id="email" type="email" required placeholder="Enter Your Email" name='text1'
+                        <input id="email" type="email" required placeholder="Enter Your Email" name='text'
                             class="validate">
                         <label for="email" class="center-align"></label>
                     </div>
@@ -65,21 +70,20 @@
                 <div class="row margin">
                     <div class="input-field col s12">
                         <i class="mdi-action-lock-outline prefix"></i>
-                        <input id="password" placeholder="Password" onclick="ValidateEmail(document.form1.text1)"
-                            type="password" class="validate">
+                        <input id="password" placeholder="Password" type="password" name='text' class="validate">
                         <label for="password"></label>
                     </div>
                 </div>
                 <div class="row margin">
                     <div class="input-field col s12">
                         <i class="mdi-action-lock-outline prefix"></i>
-                        <input id="password-again" placeholder="Repeat Password" type="password">
+                        <input id="password-again" placeholder="Repeat Password" name='text' type="password">
                         <label for="password-again"></label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <a onclick="register()" class="btn waves-effect waves-light col s12">Register Now </a>
+                        <a id="register" class="btn waves-effect waves-light col s12">Register Now </a>
                     </div>
                     <div class="input-field col s12">
                         <p class="margin center medium-small sign-up">Already have an account? <a href='login'>Login</a>
@@ -90,7 +94,7 @@
         </div>
     </div>
     <script src="./register.js"></script>
-    <script src="./email_validation.js"></script>
+
 </body>
 
 </html>

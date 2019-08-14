@@ -31,7 +31,7 @@ var product = mongoose.model('product', productSchema);
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use(express.static(path.join(__dirname, '/../client/public/scripts')));
+app.use(express.static(path.join(__dirname, '/../client/public/script')));
 app.use(express.static(path.join(__dirname, '/../client/public/css')));
 
 app.get('/Register', function (req, res) {
@@ -50,7 +50,7 @@ app.get('/forgot-password', function (req, res) {
     res.sendFile(path.join(`${__dirname}/../client/forgot-password.html`));
 });
 app.get('/Home_page', function (req, res) {
-    res.sendFile(path.join(`${__dirname}/../client/Home_page.html`));
+    res.sendFile(path.join(`${__dirname}/../client/home_page.html`));
 
 });
 app.get('/Home/:Product_Owner_ID', function (req, res) {
@@ -64,31 +64,38 @@ app.get('/Home/:Product_Owner_ID', function (req, res) {
     })
 });
 app.post('/userRegister', function (req, res) {
-    console.log(req.body.user_Register);
+
+    console.log(req.body);
 
     var email_obj = User.findOne({
         email: req.body.email
     })
-    console.log(email_obj);
+    //  console.log(email_obj);
     email_obj.exec(function (err, data) {
 
         if (err) {
+            // console.log("error...", err);
+
             return res.status(301).send('query error');
         }
         if (data) {
+            // console.log("data......", data);
+
             return res.status(300).send('email already exist...');
         }
         var User_Store = new User({
-            username: req.body.username,
+            username: req.body.name,
             email: req.body.email,
             password: req.body.password,
-            password_again: req.body.password_again
+            password_again: req.body.cpassword
         });
-        console.log(User_Store);
+        //  console.log(User_Store);
         User_Store.save(function (err, data) {
-            if (err) {
-                return res.status(301).send('fill all required fields');
-            }
+
+
+            // if (err) {
+            //     return res.status(301).send('fill all required fields');
+            // }
             if (data) {
                 console.log('Saved ', data);
                 let data1 = { id: data._id, username: data.username };

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link src="/home/maindwave-dev1/Documents/task 2/login.js">
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
     <!-- CORE CSS-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style type="text/css">
         html,
         body {
@@ -25,6 +25,11 @@
         body {
             display: table-cell;
             vertical-align: middle;
+        }
+
+        .msg {
+            color: red;
+            padding-left: 94px;
         }
 
         .margin {
@@ -48,7 +53,7 @@
                     </div>
 
                 </div>
-                <div>
+                <div class="msg">
                     <p id="message"></p>
                 </div>
                 <div class="row margin">
@@ -69,7 +74,7 @@
                 <div class="row">
                     <div class="input-field col s12">
 
-                        <a onclick="login()" class="btn waves-effect waves-light col s12">Login</a>
+                        <a id="login" class="btn waves-effect waves-light col s12">Login</a>
 
                     </div>
                 </div>
